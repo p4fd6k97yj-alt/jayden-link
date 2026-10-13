@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jayden Link</title>
+<style>
+body {
+  background: #080808;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 25px;
+}
+h1 { color: #7c5cff; }
+input, button {
+  padding: 12px;
+  margin: 8px;
+  border-radius: 10px;
+  border: none;
+}
+input { width: 80%; max-width: 350px; }
+button {
+  background: #7c5cff;
+  color: white;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1>Jayden Link</h1>
+<p>Your all-in-one link hub</p>
+
+<input id="site" placeholder="Enter a website URL">
+<br>
+<button onclick="go()">Open Website</button>
+
+<script>
+function go() {
+  let url = document.getElementById('site').value.trim();
+  if (!url) return;
+  if (!/^https?:\/\//i.test(url)) {
+    url = 'https://' + url;
+  }
+  window.open(url, '_blank');
+}
+</script>
+</body>
+</html>
